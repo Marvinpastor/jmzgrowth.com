@@ -47,14 +47,23 @@
     nav.scrolled { background: rgba(13,13,13,0.92); backdrop-filter: blur(10px); }
 
     .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
     }
-    .nav-logo span { color: var(--cream); }
+    .nav-logo-mark { flex-shrink: 0; }
+    .nav-logo-text {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+    }
+    .nav-logo-text strong {
+      font-weight: 600;
+      color: var(--gold);
+    }
 
     .nav-links {
       display: flex;
@@ -530,7 +539,9 @@
 
   <!-- NAV -->
   <nav id="navbar">
-    <a href="#hero" class="nav-logo">JMZ<span> Growth</span></a>
+    <a href="#hero" class="nav-logo">
+      <span class="nav-logo-text"><strong>JMZ</strong> Growth</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#vision">Vision</a></li>
@@ -702,13 +713,13 @@
         </p>
       </div>
 
-      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <form class="contact-form reveal" action="https://formspree.io/f/xvzvaqkn" method="POST">
         <div class="form-row">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Email Address" required />
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Email Address" required />
         </div>
-        <input type="text" placeholder="Subject" />
-        <textarea placeholder="Your Message"></textarea>
+        <input type="text" name="subject" placeholder="Subject" />
+        <textarea name="message" placeholder="Your Message"></textarea>
         <button type="submit" class="submit-btn">Send Message</button>
       </form>
     </div>
